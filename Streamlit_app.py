@@ -7,12 +7,14 @@ streamlit.text('🐔 Hard-Boiled Free-Range Egg')
 streamlit.text('🥑🍞Avocado Toast ')
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
 
-streamlit.header("Fruityvice Fruit Advice!")
+
 import requests
-#New Section to Display FruityVice API Response streamlit.header('Fruityvice Fruit Advice!') import requests
-
-fruityvice_repsonse = requests.get("https://fruityvice.com/api/fruit/kiwi") fruityvice_normalized = json_normalize(fruityvice_repsonse.json()) streamlit.dataframe(fruityvice_normalized)
-
----End of Code
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruityvice_response)
+streamlit.header("Fruityvice Fruit Advice!")
+# write your own comment -what does the next line do? 
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+# write your own comment - what does this do?
+streamlit.dataframe(fruityvice_normalized)
 
 
